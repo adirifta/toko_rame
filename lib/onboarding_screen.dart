@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'onboarding_page.dart';
 import 'onboarding_data.dart';
+// ignore: unused_import
+import 'product_detail_page.dart'; // Import the ProductDetailPage
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -65,6 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: TextButton(
               onPressed: () {
                 // Implement skip button functionality
+                Navigator.pushReplacementNamed(context, '/productDetail');
               },
               style: TextButton.styleFrom(
                 foregroundColor: Colors.black, // Text color for the skip button
@@ -103,7 +106,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: ElevatedButton(
               onPressed: () {
                 if (currentIndex == onboardingData.length - 1) {
-                  // Implement navigation to the next screen
+                  Navigator.pushReplacementNamed(context, '/productDetail');
                 } else {
                   _pageController.nextPage(
                     duration: const Duration(milliseconds: 300),
